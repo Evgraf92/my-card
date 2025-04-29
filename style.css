@@ -1,0 +1,271 @@
+/* Основные стили */
+:root {
+    --qa-primary: #5D6D7E;
+    --qa-secondary: #2874A6;
+    --qa-accent: #E74C3C;
+    --qa-light: #EAEDED;
+    --qa-dark: #1B2631;
+    --qa-bg: #F8F9F9;
+    --qa-text: #2C3E50;
+    --qa-border: #D5DBDB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--qa-bg);
+    color: var(--qa-text);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Карточка */
+.qa-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Шапка */
+.qa-header {
+    background: linear-gradient(135deg, var(--qa-primary), var(--qa-secondary));
+    color: white;
+    padding: 30px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.qa-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255,255,255,0.2);
+}
+
+.qa-title h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.qa-title h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.qa-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge.manual {
+    background: #F1C40F;
+    color: var(--qa-dark);
+}
+
+.badge.auto {
+    background: #27AE60;
+    color: white;
+}
+
+.badge.api {
+    background: #9B59B6;
+    color: white;
+}
+
+/* Основное содержимое */
+.qa-body {
+    padding: 30px;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--qa-secondary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h3 i {
+    color: var(--qa-primary);
+}
+
+.qa-about {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--qa-border);
+}
+
+/* Колонки */
+.qa-columns {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.qa-skills, .qa-experience {
+    flex: 1;
+}
+
+/* Навыки */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-category h4 {
+    color: var(--qa-primary);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    border-bottom: 1px dashed var(--qa-border);
+    padding-bottom: 5px;
+}
+
+.skill-category ul {
+    list-style: none;
+}
+
+.skill-category li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.95rem;
+}
+
+.skill-category li::before {
+    content: "▹";
+    color: var(--qa-accent);
+    position: absolute;
+    left: 0;
+}
+
+/* Опыт работы */
+.experience-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--qa-border);
+}
+
+.experience-item:last-child {
+    border-bottom: none;
+}
+
+.experience-item h4 {
+    color: var(--qa-dark);
+    margin-bottom: 5px;
+}
+
+.company {
+    font-weight: 600;
+    color: var(--qa-secondary);
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.period {
+    color: var(--qa-primary);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.experience-item ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.experience-item li {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+/* Контакты */
+.qa-contacts {
+    margin-bottom: 25px;
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.contact-item i {
+    color: var(--qa-primary);
+}
+
+/* Кнопка */
+.contact-btn {
+    background-color: var(--qa-secondary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: var(--qa-accent);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .qa-columns {
+        flex-direction: column;
+    }
+
+    .qa-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .badge {
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+}
